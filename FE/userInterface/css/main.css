@@ -1,0 +1,444 @@
+body {
+  font-family: "Lato", sans-serif;
+  margin-top:10px;
+}
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.notif{
+  color: red;
+  padding: 30px 30px;
+  font-weight: bold;
+}
+
+.bgimg {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+                    rgba(0, 0, 0, 0.5)),
+                    url("../images/bg.jpg");
+  height: 100%;
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.insidebg{
+  top: 5%;
+  background-color: white;
+  width: 80%;
+  height: 90%;
+  margin: auto;
+  position: relative;
+  border: 3px solid #d2bb82;
+  border-radius: 10px;
+  overflow: scroll;
+}
+
+/************************** MAIN HTML *****************************/
+#navToggle{
+  font-size:30px;
+  cursor:pointer;
+}
+
+#navBtn{
+  padding: 20px;
+}
+
+.busName{
+  font-family: monospace;
+  color: white;
+  font-size: 18px;
+  padding: 30px 10px;
+  margin: auto;
+  text-align: center;
+}
+
+.nameInContent{
+  font-family: monospace;
+  color: Black;
+  font-size: 18px;
+  padding: 20px 10px;
+  margin: auto;
+  text-align: center;
+}
+
+#main{
+  margin: auto;
+  padding: 15px 20px;
+  position: relative;
+}
+
+#navInfo{
+  padding: 10px 15px !important;
+}
+
+#companyInfo{
+  padding: 35px 0 !important;
+}
+
+.navInfoTitle{
+  color: white;
+  font-size: 14px !important;
+  margin: 12px 0;
+}
+
+.navInfoData{
+  color: grey;
+  font-size: 12px;
+}
+
+.logoutButnC{
+  position: relative;
+  height: 170px;
+}
+#logoutButnD {
+  position: absolute;
+  bottom: 15px;
+  width: 150px;
+  left: 45px;
+}
+#logoutButnD:hover{
+  opacity: 0.8;
+}
+
+.logoiShopC{
+  position: relative;
+  height: 150px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#logoiShopD{
+  position: absolute;
+  bottom: 55px;
+  width: 150px;
+  left: 50px;
+height:100px;
+}
+
+.logoiShopD {
+  position: absolute;
+  bottom: 0px;
+  width: 80px;
+  left: 50px;
+height:100px;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  overflow: scroll;
+}
+
+.sidenav a {
+  /*padding: 8px 8px 8px 32px;*/
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#topNav-container{
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+}
+
+
+.notification {
+  background-color: #59651b;
+  color: white;
+  text-decoration: none;
+  /*padding: 20px 30px;*/
+  position: relative;
+  display: inline-block;
+  border-radius: 2px;
+  font-weight: bold;
+}
+
+#right-notification .button {
+    font-size: 18px;
+    width: 150px;
+    vertical-align: middle;
+}
+
+#invSpan{ 
+  font-size: 20px !important;
+  width: 160px !important;
+  vertical-align: middle ;
+  color: white !important;
+}
+
+.notification .badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  padding: 5px 10px;
+  border-radius: 50%;
+  background: red;
+  color: white;
+}
+/***************************************************************/
+
+
+/**************** The Modal (background) ***********************/
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 20% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.contact_map
+{
+  width: 80%;
+  height: auto;
+  margin: auto;
+}
+/*****************************************************************/
+
+
+
+/**************** The Widget Modal (background) ***********************/
+.wmodal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.wmodal-content {
+  background-color: #fefefe;
+  margin: 140px auto; /* 15% from the top and centered */
+  /*padding: 20px;*/
+  border: 1px solid #888;
+  transition: 0.5s;
+  width: 600px; /* Could be more or less, depending on screen size */
+  height: 600px;
+}
+
+/* The Close Button */
+.wclose {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 7%;
+  margin-right: 10px;
+}
+
+.wclose:hover,
+.wclose:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.wcontact_map
+{
+  width: 30%;
+  height: auto;
+  margin: auto;
+}
+
+#wID{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pFR{
+  background: #363d14;
+  top:2px;
+  padding: 20px;
+  color: white;
+}
+/***************************************************************/
+
+
+/*********************** MAIN CONTENT **************************/
+#img-container{
+  margin: auto;
+  margin-top: 70px;
+  height:100%;
+  width: 100%;
+  overflow: auto;
+  /*border: 2px solid red;*/
+}
+#BUimg{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+#button-container{
+  display: flex;
+  justify-content: space-around;
+  margin: 10% auto;
+  height:auto;
+  width: 70%;
+  overflow: visible;
+  /*border: 2px solid red;*/
+}
+
+#button-container button{
+  padding: 5px;
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+}
+
+.bttn:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),
+              0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+#button-container img{
+  width: 70px;
+  height: auto;
+  padding: 5px;
+}
+/***************************************************************/
+
+
+/************************** BUTTON *****************************/
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #5a6522;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 10px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+/***************************************************************/
+
+
+/************************** BUTTON *****************************/
+#addBtn{
+  color:white;
+}
+.cellMod{
+  padding: 10px;
+}
+/***************************************************************/
+
+
+
+
+
+
+@media screen and (min-width: 800px){
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+  #BUimg {max-width: 600px; height: auto;}
+  /*#main {margin-left: 250px;}*/
+  .modal-content { width: 600px;}
+}
+
+
+@media screen and (max-width: 665px){
+
+  #BUimg {
+    max-width: 600px;
+    transition: 0.5s;
+    margin-top: 25%;
+  }
+  /*#main {margin-left: px;}*/
+}
+
+/**********************************************/
+

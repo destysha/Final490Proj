@@ -1,0 +1,65 @@
+Logged in unsuccessful for user1  Tuesday 5th of March 2019 07:53:16 PM 
+Array Logged in successfulArray Logged in successfulArray Logged in successful Wednesday 20th of March 2019 04:49:13 PM
+newuser2 Logged in successful Wednesday 20th of March 2019 04:51:45 PM
+newuser2 Logged in successfulwith Password:newuser2pass
+Wednesday 20th of March 2019 04:58:36 PM
+Wednesday 20th of March 2019 05:00:53 PMUser:newuser2 Logged in successful with Password:newuser2pass
+Wednesday 20th of March 2019 05:01:59 PM
+User:newuser2 Logged in successful with Password:newuser2pass
+Wednesday 20th of March 2019 05:08:22 PMSuccessful log in for User:newuser2 with Password:newuser2pass
+Wednesday 20th of March 2019 05:09:38 PM
+Successful log in for User:newuser2 with Password:newuser2pass
+Wednesday 20th of March 2019 05:29:34 PM
+Unsuccessful login for User:newuser2 With Password:o
+Wednesday 20th of March 2019 05:31:04 PM
+Unsuccessful login for User:newuser2 With Password:wrongpass
+*Wednesday 20th of March 2019 05:33:26 PM
+Unsuccessful login for User:newuser2 Using Password:wrongpas2
+* Wednesday 20th of March 2019 05:35:01 PM
+Successful log in for User:newuser2 with Password:newuser2pass
+* Wednesday 20th of March 2019 08:18:06 PM
+Successful log in for User:newuser2 with Password:newuser2pass
+* Wednesday 20th of March 2019 08:21:07 PM
+Unsuccessful login for User:newuser2 Using Password:wrongpassword2
+* Wednesday 20th of March 2019 08:57:42 PM
+Unsuccessful login for User:newuser2 Using Password:wrongpass
+* Wednesday 20th of March 2019 09:02:09 PM
+Unsuccessful login for User:newuser2 Using Password:wrongpass
+* Wednesday 20th of March 2019 09:30:09 PM
+Unsuccessful login for User:newuser2 Using Password:nopass
+* Wednesday 20th of March 2019 09:31:36 PM
+Unsuccessful login for User:newuser2 Using Password:wrong
+* Wednesday 20th of March 2019 10:29:55 PM
+Successful log in for User:newuser2 with Password:newuser2pass
+* Wednesday 20th of March 2019 10:39:25 PM
+Successful log in for User:newuser2 with Password:newuser2pass
+* Wednesday 20th of March 2019 10:59:13 PM
+Unsuccessful Registeration User:mynewuser with Email:mynewuser@email.com and Password:mynewuserpass
+* Wednesday 20th of March 2019 11:10:16 PM
+Account Already exist with  User:mynewuser with Email:mynewuser@email.com and Password:mynewuserpass
+* Wednesday 20th of March 2019 11:17:51 PM
+Account Already exist with User:mynewuser with Email:mynewuser@email.com and Password:mynewuserpass
+* Wednesday 20th of March 2019 11:18:03 PM
+Account Already exist with User:mynewuser with Email:mynewuser@email.com and Password:mywrongmatch
+* Wednesday 20th of March 2019 11:18:27 PM
+Successfully Registered User:loco with Email:loco@email.com and Password:locopass
+* Wednesday 20th of March 2019 11:19:04 PM
+Account Already exist with User:loco2 with Email:loco2@email.com and Password:locotwo
+* Wednesday 20th of March 2019 11:22:40 PM
+Account Already exist with User:loco3 with Email:loco3@email.com and Password:iwillnotmatch
+* Wednesday 20th of March 2019 11:24:48 PM
+Account Already exist with User:loco3 with Email:loco3@email.com and Password:nomatch
+* Wednesday 20th of March 2019 11:29:13 PM
+Successfully Registered User:loco4 with Email:loco4@email.com and Password:loco4pass
+* Wednesday 20th of March 2019 11:29:45 PM
+Account Already Exists with User:loco4
+* Wednesday 20th of March 2019 11:31:43 PM
+Successful log in for User:loco4 with Password:loco4pass
+* Thursday 21st of March 2019 02:15:36 PM
+Unsuccessful login for User:newuser2 Using Password:newuser2pass
+** Thursday 21st of March 2019 02:16:24 PM
+Successfully Registered User:user1 with Email:user1@email.com and Password:user1pass
+* Thursday 21st of March 2019 02:16:52 PM
+Successful log in for User:user1 with Password:user1pass
+* Thursday 21st of March 2019 02:19:27 PM
+Successful log in for User:user1 with Password:user1pass

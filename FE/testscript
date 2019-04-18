@@ -1,0 +1,30 @@
+#!/bin/bash
+
+if [$# -lt 1] ; then 
+	echo "Please provide version number"
+	exit
+elif [$# -ge 3] ; then
+	echo "only put machine type and version number please"
+	exit
+fi
+
+ctype=$1
+fvers=$2
+echo "Attempting to create package for "$ctype" version:"$fvers
+
+cd /home/$USER/git/
+if [$ctype == "dmz"] ; then
+	tar -cf $ctype'_'$fvers.tar
+elif [$ctype == "back"] ; then 
+      	tar -cf $ctype'_'$vers.tar
+elif [$ctype == "front"] ; then
+	tar -cf $ctype'_'$fvers.tar
+elif [$ctype == "deploy" ] ; then
+	tar -cf $ctype'_'$fvers.tar
+fi
+
+echo "Package "$ctype'_'$fvers" created successfully"
+mv $ctype'_'$vers.tar /home/$USER/git/versions/
+cd /home/$USER/git/versions/
+
+sshpass -p "password" scp $ctype'_'$fvers.tar emadt@10.0.2.19:/home/emadt/git/versions
