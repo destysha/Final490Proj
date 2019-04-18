@@ -2,11 +2,12 @@
 	session_start();
 	$bzname   = $_SESSION["bzname"];
    	$email 	  = $_SESSION["email"];
+	$bID 	  = $_SESSION["bID"];
 
-	notification ($email, $bzname);
+	notification ($email, $bzname, $bID);
 
 
-	function notification($email, $bzname)
+	function notification($email, $bzname, $bID)
 	{
 
 		$ishop =  mysqli_connect("localhost","user1","user1pass","ishopdb");
@@ -49,7 +50,7 @@
 			$busInv += [$pdn=>$br];
 		}
 		
-		
+		/*
 		$counter = 0;	
 		foreach($busInv as $key=>$value)
 		{
@@ -80,8 +81,43 @@
 			$cnt++;
 			$output .= "$cnt: $key, $value\n\n";
 		}
+		*/
 		
-		//echo $output;
+		$businessInv   = "SELECT product, brand FROM businessinv WHERE businessID = '$bID'";
+		$r_businessinv = mysqli_query($ishop, $businessInv) or die (mysqli_error($ishop));
+		
+		if (!$r_businessinv){echo"Can't do query".PHP_EOL;}
+		
+		while($r = mysqli_fetch_array($r_businessinv))
+		{
+			$prod        = $r['product'];
+			$brand       = $r['brand'];
+			$listOfProd += [$prod=>$brand];
+		}
+	
+
+		$output  = " ";
+
+		$output .= "\n\nGreetings $bzname,\n\n". "We have founds new recalls that need to be brought to your attention!\n\n\n";
+
+		foreach($listOfProd as $prodPerBus=>$value1)
+		{
+			foreach($json as $jsonProd=>$value2)
+			{
+				if($prodPerBus==$jsonProd)
+				{
+					$numProd++;
+					$matchedProd += [$prodPerBus=>$jsonProd];
+				        $output .= "$numProd: $value2 --> $jsonProd\n";
+				}
+
+			}
+		}
+
+     		$output .= "\n\nWe will update your recalls and send you notification in a weekly basis\n";
+		$output .= "\nThank  you for being an important piece at iShop for Business.\n";
+		
+		//echo "\n\n*****************************************************************************************\n\n";
 
 		$_SESSION['noti']    = $output;
 		$_SESSION['noticnt'] = $cnt;
