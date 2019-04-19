@@ -4,7 +4,7 @@
 	$output = $_SESSION['noti'];
 
 	include ("php/connectDB2.php");
-	include ("notif.php");	
+	include ("php/notif.php");
 ?>
 
 <!DOCTYPE html>
