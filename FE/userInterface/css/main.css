@@ -9,7 +9,8 @@ body, html {
 
 .notif{
   color: red;
-  padding: 30px 30px;
+  padding: 0 30px;
+  padding-bottom: 15px;
   font-weight: bold;
 }
 
@@ -269,12 +270,13 @@ height:100px;
 /* Modal Content/Box */
 .wmodal-content {
   background-color: #fefefe;
-  margin: 140px auto; /* 15% from the top and centered */
+  margin: 200px auto; /* 15% from the top and centered */
   /*padding: 20px;*/
   border: 1px solid #888;
   transition: 0.5s;
-  width: 600px; /* Could be more or less, depending on screen size */
-  height: 600px;
+  width: 80%; /* Could be more or less, depending on screen size */
+  height: 490;
+  overflow: auto;
 }
 
 /* The Close Button */
@@ -283,7 +285,7 @@ height:100px;
   float: right;
   font-size: 28px;
   font-weight: bold;
-  margin-top: 7%;
+  margin-top: 45px;
   margin-right: 10px;
 }
 
@@ -416,28 +418,24 @@ height:100px;
 }
 /***************************************************************/
 
-
-
-
-
-
-@media screen and (min-width: 800px){
+/* if screen is less than 450px */
+@media only screen and (max-width: 449px)
+{
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
-  #BUimg {max-width: 600px; height: auto;}
-  /*#main {margin-left: 250px;}*/
-  .modal-content { width: 600px;}
+  .wmodal-content { max-width: 350px; height: 400px; margin: 140px auto; }
 }
 
+/* if screen is less than 780px */
+@media only screen and (max-width: 779px)
+{
+  .wmodal-content { max-width: 450px; }
+}
 
-@media screen and (max-width: 665px){
-
-  #BUimg {
-    max-width: 600px;
-    transition: 0.5s;
-    margin-top: 25%;
-  }
-  /*#main {margin-left: px;}*/
+/*if screen size is greater than 780px*/
+@media only screen and (min-width: 779px)
+{
+  .wmodal-content { max-width: 45%; }
 }
 
 /**********************************************/
