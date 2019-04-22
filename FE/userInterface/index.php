@@ -78,22 +78,27 @@
 
           <div id="button-container">
             <div>
-              <button class="bttn">
-                <img src="images/searchBTN.png">
-              </button>
+	      <a href="search.php" title="Search in iShop Inventory to add">
+              	<button class="bttn">
+                   <img src="images/searchBTN.png">
+                </button>
+	      </a>
             </div>
+
             <div>
-              <a href="ishopInv.php">
+              <a href="ishopInv.php" title="Click to search in iShop Inventory">
               	<button class="bttn">
                    <img src="images/add-remove.png">
 		</button>
               </a>
-              
             </div>
+
             <div>
-              <button id="myBtn" class="bttn">
-                <img src="images/map.png">
-              </button>
+	      <a href="upload/upload.php" title="Click to upload into your inventory">
+              	<button class="bttn">
+                   <img src="images/upload.png">
+                </button>
+              </a>
             </div>
           </div>
 
