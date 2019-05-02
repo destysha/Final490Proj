@@ -71,42 +71,53 @@
 
         <!--                            MAIN CONTENT                         -->
 	
-	<section id="main">
-          <div class="nameInContent">
-	    <!--<h2 style="margin: auto;"> This is a sample change </h2>-->
-            <h1> <a href="index.php"><img src="images/ishop.png" width="200px"> </a> </h1>
-          </div>
+	  <section id="main">
+		<div class="nameInContent">
+	  		<a href="index.php"><img src="images/ishop.png" width="200px"> </a>
+	  	</div>
+		<br>
+		
+		<h2 class="h1heading"> Upload CSV file into your inventory </h2>
+	  	<form action="php/upload.php" class="toUpload" method="post" enctype="multipart/form-data">
+    			Select file to upload:<br><br>
+    			<input type="file" name="fileToUpload" id="fileToUpload"><br><br>
 
-          <div id="button-container">
-            <div>
-	      <a href="search.php" title="Search in iShop Inventory to add">
-              	<button class="bttn">
-                   <img src="images/searchBTN.png">
-                </button>
-	      </a>
-            </div>
+		<!--Error messages go here-->
+		<?php
+                        //first method
+                        $fullUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+                        if (strpos($fullUrl,"status=error1")==true)
+                        {
+                                echo "<h3 class='errorMsg'> Sorry, file is too large. </h3>";
+                        }
+                        elseif (strpos($fullUrl,"status=error2")==true)
+                        {
+                                echo "<h3 class='errorMsg'>Sorry, only CSV file extension is allowed.</h3>"; 
+                        }
+                        elseif (strpos($fullUrl,"status=error3")==true)
+                        {
+                                echo "<h3 class='errorMsg'>Sorry, your file was not uploaded.</h3>";
+                        }
+                        elseif (strpos($fullUrl,"status=error4")==true)
+                        {
+                                echo "<h3 class='errorMsg'>Sorry, there was an error uploading your file.</h3>";
+			}
+			elseif (strpos($fullUrl,"status=error5")==true)
+                        {
+                                echo "<h3 class='errorMsg'>Sorry, file already exists.</h3>";
+                        }
 
-            <div>
-              <a href="ishopInv.php" title="Click to search in iShop Inventory">
-              	<button class="bttn">
-                   <img src="images/add-remove.png">
-		</button>
-              </a>
-            </div>
+			elseif (strpos($fullUrl,"status=success")==true)
+			{
+				echo "<h3 class='successMsg'>File successfully imported. Go to your inventory.</h3>";
+			}
+                         //end first method
+		?>
+    			<br><input type="submit" value="Upload File" name="submit">
+	  	</form>
 
-            <div>
-	      <a href="toUpload.php" title="Click to upload into your inventory">
-              	<button class="bttn">
-                   <img src="images/upload.png">
-                </button>
-              </a>
-            </div>
-          </div>
-
-          <div id="img-container">
-            <img id="BUimg" src="images/recall.jpg" alt="BUimg" title="Our Business">
-          </div>
-        </section>
+           
+          </section>
       </div>
       <!--                               END OF MAIN CONTENT                 -->
 

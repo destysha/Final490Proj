@@ -1,3 +1,27 @@
+.myinput {
+  /*width: 40%; */
+  margin: auto;
+  /*font-size: 16px;*/ 
+  /*padding: 12px 20px 12px 40px;*/ 
+  /*border-style: groove !important;*/
+  
+  background-image: url('css/searchicon.png') !important; /* Add a search icon to input */
+  background-position: 10px 12px !important; /* Position the search icon */
+  background-repeat: no-repeat !important; /* Do not repeat the icon image */
+  background-size: 20px 20px !important;
+  width: 70% !important; /* Full-width */
+  font-size: 16px !important; /* Increase font-size */
+  padding: 12px 20px 12px 40px !important; /* Add some padding */
+  border: 1px solid #ddd !important; /* Add a grey border */
+  margin-bottom: 12px !important; /* Add some space below the input */
+
+  /*border: 1px solid #ccc;*/
+  /*border-radius: 4px;*/
+  /*box-sizing: border-box;*/
+  /*margin-bottom: 12px; */
+  /*box-shadow: 5px 10px #888888;*/
+}
+
 select{
  width: 400px; text-align-last:center;
 }
