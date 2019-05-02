@@ -38,7 +38,7 @@
 
 		if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
 			//echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
-			//shell_exec("sendcsv.sh");
+			shell_exec("sendcsv.sh");
 			header('location:../toUpload.php?status=success');
 		} 
 		else {
