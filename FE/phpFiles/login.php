@@ -1,3 +1,4 @@
+#!/usr/bin/php
 <?php
 	session_start();
 	#contains login client function

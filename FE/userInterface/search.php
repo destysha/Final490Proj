@@ -1,3 +1,4 @@
+
 <?php 
         session_start();
         $cnt    = $_SESSION['noticnt'];

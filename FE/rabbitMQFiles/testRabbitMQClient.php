@@ -1,4 +1,6 @@
 <?php
+	if (ob_get_level()) { ob_end_clean(); ob_start();}
+
 	require_once('path.inc');
 	require_once('get_host_info.inc');
 	require_once('rabbitMQLib.inc');
@@ -19,7 +21,7 @@
 		
 		//$response = $client->publish($request);
 
-		echo "client received response: ".PHP_EOL;
+//		echo "client received response: ".PHP_EOL;
 		
 		//print_r($response);
 		//echo "\n\n";
@@ -46,7 +48,7 @@ function register ($username,$bzname,$street,$city,$state,$zipcode,$email,$passw
 		$client = new rabbitMQClient("testRabbitMQ.ini","testServer");
 		$response = $client->send_request($request2);
 		
-		echo "client received response for registration: ".PHP_EOL;
+//		echo "client received response for registration: ".PHP_EOL;
 
 		return $response;
 	}

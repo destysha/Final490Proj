@@ -13,6 +13,24 @@
     <title> <?php echo "$bzname" ?> | Main page </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!--===============================================================================================-->
+  	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+    <!--===============================================================================================-->
+  	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+  	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+  	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+    <!--===============================================================================================-->
+  	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+  	<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
+    <!--===============================================================================================-->
+  	<link rel="stylesheet" type="text/css" href="css/util.css">
+  	<link rel="stylesheet" type="text/css" href="css/inventory.css">
+	<link rel="stylesheet" type="text/css" href="tablestyle.css">
+	<script src"https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!--===============================================================================================-->
 
   </head>
   <body>
@@ -76,45 +94,51 @@
 	  		<a href="index.php"><img src="images/ishop.png" width="200px"> </a>
 	  	</div>
 		<br>
-		
-		<h2 class="h1heading"> Upload CSV file into your inventory </h2>
+		<br>
+		<h2 class="h1heading"> Upload CSV file into your inventory </h2><br><br>
+
 	  	<form action="php/upload.php" class="toUpload" method="post" enctype="multipart/form-data">
-    			Select file to upload:<br><br>
-    			<input type="file" name="fileToUpload" id="fileToUpload"><br><br>
 
-		<!--Error messages go here-->
-		<?php
-                        //first method
-                        $fullUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-                        if (strpos($fullUrl,"status=error1")==true)
-                        {
-                                echo "<h3 class='errorMsg'> Sorry, file is too large. </h3>";
-                        }
-                        elseif (strpos($fullUrl,"status=error2")==true)
-                        {
-                                echo "<h3 class='errorMsg'>Sorry, only CSV file extension is allowed.</h3>"; 
-                        }
-                        elseif (strpos($fullUrl,"status=error3")==true)
-                        {
-                                echo "<h3 class='errorMsg'>Sorry, your file was not uploaded.</h3>";
-                        }
-                        elseif (strpos($fullUrl,"status=error4")==true)
-                        {
-                                echo "<h3 class='errorMsg'>Sorry, there was an error uploading your file.</h3>";
-			}
-			elseif (strpos($fullUrl,"status=error5")==true)
-                        {
-                                echo "<h3 class='errorMsg'>Sorry, file already exists.</h3>";
-                        }
+    			<h3 style="font-weight:bold;"> Select file to upload:</h3><br>
+    			<input type="file" name="fileToUpload" id="fileToUpload"><br>
 
-			elseif (strpos($fullUrl,"status=success")==true)
-			{
-				echo "<h3 class='successMsg'>File successfully imported. Go to your inventory.</h3>";
-			}
-                         //end first method
-		?>
-    			<br><input type="submit" value="Upload File" name="submit">
+			<!--Error messages go here-->
+			<?php
+		                //first method
+		                $fullUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+		                if (strpos($fullUrl,"status=error1")==true)
+		                {
+		                        echo "<h3 class='errorMsg'> Sorry, file is too large. </h3>";
+		                }
+		                elseif (strpos($fullUrl,"status=error2")==true)
+		                {
+		                        echo "<h3 class='errorMsg'>Sorry, only CSV file extension is allowed.</h3>"; 
+		                }
+		                elseif (strpos($fullUrl,"status=error3")==true)
+		                {
+		                        echo "<h3 class='errorMsg'>Sorry, no file selected.</h3>";
+		                }
+		                elseif (strpos($fullUrl,"status=error4")==true)
+		                {
+		                        echo "<h3 class='errorMsg'>Sorry, there was an error uploading your file.</h3>";
+				}
+				elseif (strpos($fullUrl,"status=error5")==true)
+		                {
+		                        echo "<h3 class='errorMsg'>Sorry, file already exists or No file selected.</h3>";
+		                }
+
+				elseif (strpos($fullUrl,"status=success")==true)
+				{
+					echo "<h3 class='successMsg'>File successfully imported. Go to your inventory.</h3>";
+				}
+		                 //end first method
+			?>
+    			<br><input type="submit" value="Upload File" name="submit" id="toUpload">
 	  	</form>
+		
+		<br><br>
+		<button class ="myButton" onclick="location.href='businessInv.php';">Back to Your Inventory</button>
+		<br><br><br><br>
 
            
           </section>

@@ -1,3 +1,4 @@
+
 <?php
 $conn = mysqli_connect("localhost","user1","user1pass","SampleShop");
                 if($conn->connect_error)

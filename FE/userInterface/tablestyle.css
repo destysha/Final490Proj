@@ -43,27 +43,33 @@ select{
 }
 
 
+.toUpload{
+	margin: auto;
+	width: 70%;
+}
 
-//navbar styling for Search
-.topnav{
-overflow:hidden;
-background-color:#e9e9e9;
-margin:auto;
+#toUpload{
+  background-color: white !important; 
+  color: black !important; 
+  border: 2px solid #5A6522 !important;
+  padding: 10px 25px !important;
+  border-radius: 15px !important;
+  box-shadow: 0 9px #999 !important;
+  cursor: pointer !important;
 }
-.topnav .search-container {
-float:right;
-box-shadow:5px 10px #888888;
+
+#toUpload:hover {
+  background-color: #5A6522 !important;
+  color: white !important;
 }
-.topnav .search-container button{
-float:right;
-padding:6px;
-margin-top:8px;
-margin-right:16px;
-background:#ddd;
-font-size:17px;
-border:none;
-cursor:pointer;
+
+#toUpload:active {
+  background-color: #5A6522 !important;
+  box-shadow: 0 5px #999 !important;
+  transform: translateY(4px) !important;
 }
+
+
 .topnav .search-container button:hover{
 background:#ccc;
 }
