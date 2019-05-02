@@ -14,6 +14,23 @@ body, html {
   font-weight: bold;
 }
 
+.errorMsg
+{
+	font-size: 14px;
+	color: red;
+	padding-left: 30px;
+	font-style: italic;
+}
+
+
+.successMsg
+{
+	font-size: 14px;
+	color: green;
+	padding-left: 30px;
+	font-style: italic;
+}
+
 .bgimg {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5),
                     rgba(0, 0, 0, 0.5)),
