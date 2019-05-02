@@ -102,12 +102,20 @@
 	
         <!--                            MAIN CONTENT                         -->
         <section id="main">
-          <div class="nameInContent">
-            <h1> <?php echo $bzname; ?> </h1><br>
+	  
+	  <div class="nameInContent">
+            <h1> <a href="index.php"><img src="images/ishop.png" width="200px"> </a> </h1>
           </div>
- 		<div class ="inventory" class="animate form">
-		
 
+          <div class="nameInContent">
+            <h1> <?php echo $bzname; ?> </h1>
+                <br><br>
+                 <button class="myButton" onclick="location.href='ishopInv.php';">Update Inventory</$
+                <br><br>
+
+          </div>
+
+ 		<div class ="inventory" class="animate form">			
 		<!--March 27 Haris -->
 	<?php
 //		require ('../rabbitMQFiles/testRabbitMQClient.php');

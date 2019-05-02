@@ -73,6 +73,7 @@
 	
 	<section id="main">
           <div class="nameInContent">
+	    <!--<h2 style="margin: auto;"> This is a sample change </h2>-->
             <h1> <a href="index.php"><img src="images/ishop.png" width="200px"> </a> </h1>
           </div>
 
@@ -94,7 +95,7 @@
             </div>
 
             <div>
-	      <a href="upload/upload.php" title="Click to upload into your inventory">
+	      <a href="import/import.php" title="Click to upload into your inventory">
               	<button class="bttn">
                    <img src="images/upload.png">
                 </button>

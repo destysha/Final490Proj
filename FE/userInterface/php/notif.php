@@ -5,7 +5,7 @@ session_start();
 $bzname   = $_SESSION["bzname"];
 $email 	  = $_SESSION["email"];
 $bID 	  = $_SESSION["bID"];
-//$bID 	  = 1;
+
 
 notification ($email, $bzname, $bID);
 

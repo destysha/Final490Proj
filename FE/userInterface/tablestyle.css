@@ -11,6 +11,15 @@ select{
 	color:blue;
 	
 }
+
+.h1heading{
+	text-align: center;
+	font-weight: bold;
+	font-family: monospace;
+}
+
+
+
 //navbar styling for Search
 .topnav{
 overflow:hidden;

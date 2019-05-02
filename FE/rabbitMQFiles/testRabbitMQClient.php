@@ -120,4 +120,20 @@ function getOp($que)
         $response = $client->send_request($request8);
                 return $response;
 }
+
+function getNotif($email,$bzname,$bID)
+{
+	 $client = new rabbitMQClient("testRabbitMQ.ini","testServer");
+        $request = array();
+        $request['type'] ="getNotif";
+	$request['email'] = $email;
+	$request['bzname'] = $bzname;
+	$request['bID'] = $bID;
+
+        $response = $client->send_request($request);
+	return $response;
+
+	$output = $response[0];
+	$numProd = $response[1];
+}
 ?>

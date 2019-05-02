@@ -1,20 +1,16 @@
-<?php
-	session_start();
-        $cnt = $_SESSION['noticnt'];
+<?php 
+        session_start();
+        $cnt    = $_SESSION['noticnt'];
         $output = $_SESSION['noti'];
+	$bzname = $_SESSION ['bzname'];
+        $bID    = $_SESSION ['bID'];
+	$street = $_SESSION ['street'];
+	$city   = $_SESSION ['city'];
+	$state  = $_SESSION ['state'];
+	$zc     = $_SESSION ['zc'];
+	$email  = $_SESSION ['email'];
 
-//        include ("php/connectDB2.php");
-        include ("notif.php");	
-/*
-   $bID     =  $_SESSION ['bID'];
-   $bzname  =  $_SESSION ['bzname'];
-   $street  =  $_SESSION ['street'];
-   $city    =  $_SESSION ['city'];
-   $state   =  $_SESSION ['state'];
-   $zipcode =  $_SESSION ['zipcode'];
-   $email   =  $_SESSION ['email'];
-   $username = $_SESSION ['username'];
-*/
+        include ("notif.php");
 ?>
 
 <!DOCTYPE html>
@@ -123,8 +119,9 @@
 
         <button class ="myButton" onclick="location.href='businessInv.php';">Back to Your Inventory</button>
 
-<!--MAKING A NEW TABLE OF ISHOP INV COMING FROM RABBITMQ-->
-<br><br><br><h1 class="heading">Ishop Inventory</h1><br><br>
+	<!--MAKING A NEW TABLE OF ISHOP INV COMING FROM RABBITMQ-->
+	<br><br><br>
+	<h1 class="h1heading">Ishop Inventory</h1><br><br>
 		<?php
 			
 			require ('../rabbitMQFiles/testRabbitMQClient.php');
