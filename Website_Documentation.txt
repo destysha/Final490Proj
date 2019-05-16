@@ -64,6 +64,8 @@ On the List above, select testExchange
 	Routing Ket: *
 		Click "Bind"
 
+
+
 # Steps to set up db using ishop.sql file
 
 To import ishop database onto all Backend VM's
@@ -77,7 +79,7 @@ locate ishopdb.sql
 		source ishopdb.sql
 
 Create a mysql user & give privileges:
-        CREATE USER 'user1'@'localhost' identified by 'user1pass'
+        CREATE USER 'user1'@'localhost' identified by 'user1pass';
         GRANT ALL PRIVILEGES on ishopdb.* to 'user1'@'localhost';
 	FLUSH privileges;
 
@@ -147,7 +149,7 @@ on VM #2
 
 Now you will be able to use www.ishop.com
 	logins: user1
-	pass  : user1pass
+	pass  : 12345
 or you can enter VM#1 IP in url and it'll also work.
 
 Check Deploy_Documentation.txt to set up deployment system.
