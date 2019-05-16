@@ -1,15 +1,15 @@
 
 Haris Nasir
-Shaiddy
-Ahsan
-Emad
-Franny
-						SUDO TEAM
+Shaiddy Perez
+Ahsan Nawaz
+Emad Tirmizi
+Franny Garcia
+		                     SUDO TEAM
 Ishop :
 	**  https://github.com/destysha/Final490Proj  **    -> presented Branch: shaiddy04
 							    -> Creating new Branch with a copy of
 							       and Documentaion regaring ishop. 
-						Branch Name: 
+						Branch Names: 
 
 	https://github.com/destysha/490Proj
 	https://github.com/sirharis214/it490/blob/mysql_example/
