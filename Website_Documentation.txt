@@ -1,0 +1,153 @@
+Haris Nasir
+
+To Start, You Must have atleast 2 VM's
+Set VM #1 IP Address to 10.0.2.10    (Frontend)
+Set VM #1 IP Address to 10.0.2.11    (Backend)
+
+First step is to download all programs we will need.
+run the script called :
+        script_1.sh
+This script will download the following programs 
+that are neccessary for our setup:
+
+git  apache2  php  php-amqp  rabbitmq-server  aptitude  php-mysql  mysql-server
+ssh  sshpass  net-tools
+
+This script will also enable rabbitmq so we can jump into the GUI.
+
+After script_1.sh downloads all neccessary programs, At the end
+It will List all users for rabbitmq, and ask user if username: test is in the list.
+If you answer 'no', it will create 
+user: test 
+pass: test 
+give 'test' admin privileges.
+
+**AFTER THE SCRIPT IS DONE.**
+
+You must go into your web browser for RMQ GUI, type
+	 localhost:15672   as url
+First login as guest:guest 
+	Click on Virtual Hosts on the top-right side of your screen.
+	Under the list, 
+	Create a new Vhost by typing in textfeiled: testHost
+	Click the Blue button on bottom left "Add virtual host"
+Next Give user: test    permissions to testHost
+	Click on testHost.
+	Under Permissions, select user test and make sure .* is under all fields under it
+	Click Set Permissions.
+Next Lets Create Queues.
+        Logout and log back in as test.
+        Top of the page, click on Queues tab.
+        Under 'Add a new queues'
+        Virtual host: Select 'testHost'
+        Name: testQueue
+        Type 'direct'
+        Durability 'Durable'
+        Auto delete 'No'
+        Internet 'No'
+        	CLICK "Add Queue"
+Next Lets Create Exchanges and Queues.
+	Logout and log back in as test.
+	Top of the page, click on Exchanges tab.
+	Under 'Add a new exchange'	
+	Virtual host: Select 'testHost'
+	Name: testExchange
+	Type 'direct'
+	Durability 'Durable'
+	Auto delete 'No'
+	Internet 'No'
+	CLICK "Add Exchange"
+On the List above, select testExchange
+	Under "Add binding from this exchange"
+	Select : "To queue" 
+	Type: testQueue
+	Routing Ket: *
+		Click "Bind"
+
+# Steps to set up db using ishop.sql file
+
+To import ishop database onto all Backend VM's
+Go to ~/git/Final490Proj/
+locate ishopdb.sql
+
+	log in to mysql
+		sudo mysql -u root
+		create database ishopdb;
+		use ishopdb;
+		source ishopdb.sql
+
+Create a mysql user & give privileges:
+        CREATE USER 'user1'@'localhost' identified by 'user1pass'
+        GRANT ALL PRIVILEGES on ishopdb.* to 'user1'@'localhost';
+	FLUSH privileges;
+
+To Get ishop working:
+On Your terminal screen, create a folder called git to clone our ishop repo into. clone the repo into that directory and checkout branch04.
+
+	mkdir git
+	cd git
+	git init
+	git clone https://github.com/destysha/Final490Proj/tree/shaiddy04
+	git fetch --all
+	git branch --all
+	git checkout shaiddy04
+	git pull origin shaiddy04
+
+There are 2 Directories, FE and BE.
+which stand for Frontend and Backend.
+
+on VM#1 (IP 10.0.2.10)
+# Move FE files into /var/www/
+	cd /var/www/
+	sudo mkdir ishop
+	cd ~/git/Final490Proj/FE/
+	sudo cp -r ./* /var/www/ishop/
+	
+# Set up Apache configuration
+	cd /etc/
+	sudo vi hosts
+		enter in a new line: 
+		127.0.0.1	www.ishop.com
+		-save- (esc + :wq)
+	cd apache2/sites-available/
+	sudo cp 000-default.conf  001-ishop.conf
+	sudo vi 001-ishop.conf
+		following info must be in there:
+			ServerAdmin hmn7@njit.edu
+        		ServerName www.ishop.com
+        		ServerAlias ishop.com
+        		DocumentRoot /var/www/ishop/
+		-save-
+	cd ../sites-enabled
+	sudo a2ensite 001-ishop.conf
+	sudo systemctl restart apache2.service
+
+on VM #2
+	you can leave the files in the ~/git/Final490Proj/
+	We will be using the directory  /BE
+
+** Lets set up systemd on BE VM's so Server2.php runs automatically **
+	 ON BACKEND VM 
+                cd /lib/systemd/system
+                sudo vi ishop.service
+                        [Unit]
+                        Description= This is a ishop backend rmq server
+
+                        [Service]
+                        Type=simple
+                        ExecStart=/usr/bin/php -f /home/USERNAME/git/Final490Proj/BE/Server2.php
+
+                        [Install]
+                        WantedBy=multi-user.target
+
+                -save-
+                sudo systemctl start ishop.service
+                sudo systemctl status ishop.service
+                sudo systemctl enable ishop.service
+
+Now you will be able to use www.ishop.com
+	logins: user1
+	pass  : user1pass
+or you can enter VM#1 IP in url and it'll also work.
+
+Check Deploy_Documentation.txt to set up deployment system.

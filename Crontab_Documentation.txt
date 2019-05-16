@@ -1,0 +1,64 @@
+Emad 
+
+Crontabs
+
+Notification crontab:
+0 8 * * 6 wget  https://download.open.fda.gov/food/enforcement/food-enforcement-0001-of-0001.json.zip -P /home/franny/Desktop/
+
+Download the api from the FDA website to the Server Desktop
+1 8 * * 6 unzip /home/franny/Desktop/food-enforcement-0001-of-0001.json.zip -d /home/franny/Desktop/
+
+Unzip the api to the desktop
+2 8 * * 6 mv /home/franny/Desktop/food-enforcement-0001-of-0001.json /home/franny/
+
+Move the api to the home directory
+3 8 * * 6 php -f /var/www/html/index-api.php
+
+Run the index-api.php file which truncates the JSON table in the database and inserts the contents of the JSON file to the table
+4 8 * * 6 rm /home/franny/Desktop/food-enforcement-0001-of-0001.json*
+
+Remove the package from the Desktop
+5 8 * * 6  rm /home/franny/food-enforcement-0001-of-0001.json
+
+Remove the package from the home directory
+6 8 * * 6 php -f ~/var/www/ishop/userInterface/php/notif.php
+
+Cross references the JSON table with the inventory of the companies and makes a popup in notification bar on the html page.  
+
+Email Crontab
+7 8 * * 6 php -f ~/var/www/ishop/userInterface/php/email.php
+
+Cross references the JSON table with the inventory of the companies and sends an email with a list of any products that are in recall that the company has in their inventory. 
+
+Failover Front-End:
+
+In crontab (sudo nano /etc/crontab) insert the following script
+* *    * * *    root    /bin/bash /Final490Proj/testing
+
+Command is ran every minute
+
+Once ran, it loops every 5 seconds pinging the Master, if and when it fails it runs the chkconnection.sh script.
+If it is still working testing will echo “working”
+If no connection, Testing , it echos “Host not Found” .
+Once the chkconnection.sh script is ran on the Front-End Slave machine, the Slave will then take over hosting by disabling the conf file for hosting in Master and Enable the conf file in Slave.
+It then starts and restarts apache in the Slave
+
+Failover Back-End
+
+In crontab (sudo nano /etc/crontab) insert the following script
+* *     * * * /bin/bash /Final490Proj/testing
+
+Command is ran every minute
+
+Once ran it loops every 5 seconds pinging the Master, once it fails it runs the chkconnection.sh script.
+
+If it is still working testing will echo “working”
+If no connection, Testing , it echos “Host not Found” 
+The check connection script then it uses ssh to delete the testRabbitMQ.ini file from the FE, and 
+replaces it with its own that contains the slave’s ip for the Host,
+it then restarts apache on the FE using ssh
+
+ 
+ 
+ 
+
